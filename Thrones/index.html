@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game of Thrones</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<selection class="selection_left">
+    <div class="block_left">
+    </div>
+</selection>
+
+ <selection class="selection_right">
+      <div class="block_right">
+          <h1>Game of Thrones</h1>
+          <form>
+              <div class="submit_form">
+                  <label for="email">Enter your email</label>
+                  <input type="email" id="email" name="email" placeholder="arya@westeros.com" required>
+              </div>
+              <div class="submit_form">
+                  <label for="password">Choose secure password</label>
+                  <label for="password" id="addition">Must be at least 8 characters</label>
+                  <input type="password" id="password" name="password" placeholder="password"
+                         minlength="8" required>
+              </div>
+              <div class="remember_form">
+              <input type="checkbox" id="checkbox" name="checkbox">
+              <label for="checkbox">Remember me</label>
+              </div>
+              <button type="submit" id="button" name="button"> Sign up</button>
+          </form>
+      </div>
+  </selection>
+
+<!--<selection class="selection_right">
+    <div class="block_right">
+        <h1 id="h1_additional">Game of Thrones</h1>
+        <div class="block_right_tag">
+            <h4><p>You've successfully joined the game.</p>
+                <p> Tell us more about yourself.</p></h4>
+        </div>
+        <form>
+            <div class="submit_form">
+                <label for="text_name">Who are you?</label>
+                <label for="text_name" id="label_text_name">Alpha-numeric username</label>
+                <input type="text" id="text_name" name="text_name" placeholder="arya" required>
+            </div>
+            <div class="submit_form">
+                <label class="text_house">Your Great House</label>
+                <select class="select_house" required>
+                    <option hidden disabled selected value>Select House</option>
+                    <option value="Stark">Stark</option>
+                    <option value="Bolton">Bolton</option>
+                </select>
+            </div>
+            <div class="submit_form">
+                <label for="text_preferences">Your preferences, hobbies, wishes, etc.</label>
+                <input type="text" id="text_preferences" name="text_preferences"
+                       placeholder="I have long TOKILL list..." required>
+            </div>
+            <button type="submit" id="save" name="button">Save</button>
+        </form>
+    </div>
+</selection>-->
+
+</body>
+</html>
