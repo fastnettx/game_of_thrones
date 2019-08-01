@@ -25,13 +25,13 @@ body {
 }
 
 
-.selection_left {
+.section_left {
     background-image: url("images/maxresdefault.jpg");
-    background-size: 140vh;
+    background-size: cover;
     background-position: center;
 }
 
-.selection_right {
+.section_right {
     background-image: url("images/darknoise.png");
     color: #d3bb89;
 }
@@ -44,11 +44,11 @@ h1 {
 }
 
 form {
-    font-family: OpenSans-Semibold;
+    font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
 }
 
 label {
-    font-family: EBGaramond-Medium;
+    font-family: EBGaramond-Medium, Arial, Helvetica, sans-serif;
 }
 
 #h1_additional {
@@ -73,10 +73,10 @@ form input, .select_house {
     color: #fef8eb;
 }
 
-#addition {
+.submit_form_password{
     font-size: 12px;
     color: #fef8eb;
-    font-family: OpenSans-Semibold;
+    font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
 }
 
 .remember_form {
@@ -87,12 +87,11 @@ form input, .select_house {
 
 .remember_form > label {
     padding: 0px 0px 0px 30px;
-}
+    }
 
 /*Implemented using https://webkab.ru/stilizuem-checkbox-css/ and https://ruseller.com/lessons.php?rub=2&id=1656 */
 .remember_form {
     position: relative;
-
 }
 
 .remember_form input[type=checkbox] {
@@ -108,6 +107,7 @@ form input, .select_house {
     position: absolute;
     top: 0;
     background-color: #d3bb89;
+    margin: 3px 0;
 }
 
 .remember_form input[type=checkbox]:checked + label:after {
@@ -137,13 +137,13 @@ h4 {
     margin: 0px 20px;
     color: #fef8eb;
     font-size: 14px;
-    font-family: OpenSans-Semibold;
+    font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
 }
 
 #label_text_name {
     color: #fef8eb;
     font-size: 12px;
-    font-family: OpenSans-Semibold;
+    font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
 }
 
 select option {

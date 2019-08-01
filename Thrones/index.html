@@ -6,12 +6,9 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<selection class="selection_left">
-    <div class="block_left">
-    </div>
-</selection>
-
- <selection class="selection_right">
+<section class="section_left">
+</section>
+ <section class="section_right">
       <div class="block_right">
           <h1>Game of Thrones</h1>
           <form>
@@ -20,21 +17,21 @@
                   <input type="email" id="email" name="email" placeholder="arya@westeros.com" required>
               </div>
               <div class="submit_form">
-                  <label for="password">Choose secure password</label>
-                  <label for="password" id="addition">Must be at least 8 characters</label>
+                  <label for="password"><p>Choose secure password</p></label>
+                  <p class="submit_form_password">Must be at least 8 characters</p>
                   <input type="password" id="password" name="password" placeholder="password"
                          minlength="8" required>
               </div>
               <div class="remember_form">
-              <input type="checkbox" id="checkbox" name="checkbox">
-              <label for="checkbox">Remember me</label>
+                  <input type="checkbox" id="checkbox" name="checkbox">
+                  <label for="checkbox">Remember me</label>
               </div>
               <button type="submit" id="button" name="button"> Sign up</button>
           </form>
       </div>
-  </selection>
+  </section>
 
-<!--<selection class="selection_right">
+<!--<section class="section_right">
     <div class="block_right">
         <h1 id="h1_additional">Game of Thrones</h1>
         <div class="block_right_tag">
@@ -57,13 +54,14 @@
             </div>
             <div class="submit_form">
                 <label for="text_preferences">Your preferences, hobbies, wishes, etc.</label>
-                <input type="text" id="text_preferences" name="text_preferences"
+                <input type="textarea" id="text_preferences" name="text_preferences"
                        placeholder="I have long TOKILL list..." required>
             </div>
             <button type="submit" id="save" name="button">Save</button>
         </form>
     </div>
-</selection>-->
+</section>-->
+
 
 </body>
 </html>
