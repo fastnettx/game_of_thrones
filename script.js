@@ -1,10 +1,10 @@
-var first_run_email = true;
+let first_run_email = true;
 email.addEventListener('blur', function () {
     if (first_run_email) {
         if (!validation_rules.email((document.getElementById('email')).value)) {
             underlineFunction("email");
         } else {
-            fieldCleaningFunction("email");
+            clearTheField("email");
         }
         first_run_email = false;
     }
@@ -15,18 +15,18 @@ email.addEventListener('keyup', function () {
         if (!validation_rules.email((document.getElementById('email')).value)) {
             underlineFunction("email");
         } else {
-            fieldCleaningFunction("email");
+            clearTheField("email");
         }
     }
 });
 
-var first_run_password = true;
+let first_run_password = true;
 password.addEventListener('blur', function () {
     if (first_run_password) {
         if (!validation_rules.password((document.getElementById('password')).value)) {
             underlineFunction("password");
         } else {
-            fieldCleaningFunction("password");
+            clearTheField("password");
         }
         first_run_password = false;
     }
@@ -37,7 +37,7 @@ password.addEventListener('keyup', function () {
         if (!validation_rules.password((document.getElementById('password')).value)) {
             underlineFunction("password");
         } else {
-            fieldCleaningFunction("password");
+            clearTheField("password");
         }
     }
 });
@@ -46,7 +46,7 @@ text.addEventListener('keyup', function () {
     if (!validation_rules.text((document.getElementById('text')).value)) {
         underlineFunction("text");
     } else {
-        fieldCleaningFunction("text");
+        clearTheField("text");
     }
 });
 
@@ -54,7 +54,7 @@ textarea.addEventListener('keyup', function () {
     if (!validation_rules.textarea((document.getElementById('textarea')).value)) {
         underlineFunction("textarea");
     } else {
-        fieldCleaningFunction("textarea");
+        clearTheField("textarea");
     }
 });
 
@@ -62,25 +62,25 @@ document.getElementById('select_house').addEventListener('change', function () {
     if ((document.getElementById('select_house').value === "")) {
         underlineFunction('select_house');
     } else {
-        fieldCleaningFunction("select_house");
+        clearTheField("select_house");
     }
 });
 
-var validation_rules = {
+let validation_rules = {
     email: function (elements) {
-        var regen_email = /^[\w\.\-\_]+\@\w+\.\w{2,8}$/i;
+        const regen_email = /^[\w\.\-\_]+\@\w+\.\w{2,8}$/i;
         return regen_email.test(elements);
     },
     password: function (elements) {
-        var regen_password = /[0-9a-zA-Z!@#$%^&*]{8,}/;
+        const regen_password = /[0-9a-zA-Z!@#$%^&*]{8,}/;
         return regen_password.test(elements);
     },
     text: function (elements) {
-        var regen_text = /^\w{2,}$/i;
+        const regen_text = /^\w{2,}$/i;
         return regen_text.test(elements);
     },
     textarea: function (elements) {
-        var regen_textarea = /^[\w\s]{6,}$/i;
+        const regen_textarea = /^[\w\s]{6,}$/i;
         return regen_textarea.test(elements);
     }
 };
@@ -126,7 +126,7 @@ function underlineFunction(name) {
     document.getElementById(name).style.border = '2px solid red';
 }
 
-function fieldCleaningFunction(name) {
+function clearTheField(name) {
     document.getElementById(name).style.border = 'none';
     document.getElementById(name).style.borderBottom = '2px solid #d3bb89';
 }
