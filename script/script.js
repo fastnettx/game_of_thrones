@@ -97,7 +97,7 @@ function validation1(form) {
         validation_rules.password((document.getElementById('password')).value)) {
         switchForm();
     }
-}
+};
 
 function validation2(form) {
     event.preventDefault();
@@ -115,20 +115,55 @@ function validation2(form) {
         !(document.getElementById('select_house').value === "")) {
         alert('Form submitted');
     }
-}
+};
 
 function switchForm() {
     document.getElementById("section_1").style.display = 'none';
     document.getElementById("section_2").style.display = 'block';
-}
+};
 
 function underlineFunction(name) {
     document.getElementById(name).style.border = '2px solid red';
-}
+};
 
 function clearTheField(name) {
     document.getElementById(name).style.border = 'none';
     document.getElementById(name).style.borderBottom = '2px solid #d3bb89';
-}
+};
+
+
+$(document).ready(function () {
+
+    $('.slider_slick').slick({
+        initialSlide: 3,
+        autoplay: false,
+        arrows: false,
+        fade: true,
+    });
+
+
+    $('select').niceSelect();
+
+    $('#select_house').on('change', function () {
+        let house_name = $(this).val();
+        switch (house_name) {
+            case 'Stark':
+                $('.slider_slick').slick('slickGoTo', 0);
+                break;
+            case 'Baratheon':
+                $('.slider_slick').slick('slickGoTo', 1);
+                break;
+            case 'Lannister':
+                $('.slider_slick').slick('slickGoTo', 2);
+                break;
+            case 'Targaryen':
+                $('.slider_slick').slick('slickGoTo', 3);
+                break;
+        }
+        ;
+    })
+});
+
+
 
 

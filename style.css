@@ -5,8 +5,10 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     height: 100vh;
+
+
 }
 
 @font-face {
@@ -29,6 +31,24 @@ body {
     background-image: url("images/maxresdefault.jpg");
     background-size: cover;
     background-position: center;
+    height: 100vh;
+}
+
+.slider {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+}
+
+.carousel {
+    height: 100vh;
+}
+
+.carousel img {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .section_right {
@@ -63,14 +83,14 @@ label {
 }
 
 form input, .select_house {
-    margin: 15px 0px;
+    margin: 10px 0px;
     padding: 15px 0px;
     background: none;
     border: none;
     font-size: 18px;
     border-bottom: 2px solid #d3bb89;
     outline: none;
-    color: #fef8eb;
+    color: #d3bb89;
 }
 
 .submit_form_password {

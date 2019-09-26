@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <title>Game of Thrones</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="script/jquery-nice-select/css/nice-select.css">
+
+    <link rel="stylesheet" type="text/css" href="script/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="script/slick/slick-theme.css"/>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script/jquery-nice-select/js/jquery.nice-select.js"></script>
+    <script src="script/slick/slick.min.js"></script>
+
+
+
 </head>
 <body>
 <section class="section_left">
+    <div class="slider">
+            <div class="slider_slick carousel">
+                <div > <img src="images/stark.jpg" alt=""></div>
+                <div> <img src="images/barateon.jpg" alt=""></div>
+                <div> <img src="images/lannister.jpg" alt=""></div>
+                <div> <img src="images/targarien.jpg" alt=""></div>
+            </div>
+    </div>
 </section>
 <section class="section_right" id="section_1">
     <div class="block_right">
@@ -47,19 +67,14 @@
                 <label for="text" id="label_text_name">Alpha-numeric username</label>
                 <input type="text" id="text" name="text_name" placeholder="arya" required>
             </div>
-            <div class="submit_form">
+            <div class="submit_form ">
                 <label class="text_house">Your Great House</label>
                 <select class="select_house" id="select_house" required>
-                    <option hidden disabled selected value>Select House</option>
+                    <option data-display="Select House">Select House</option>
                     <option value="Stark">Stark</option>
-                    <option value="Bolton">Bolton</option>
                     <option value="Targaryen">Targaryen</option>
                     <option value="Lannister">Lannister</option>
-                    <option value="Arryn">Arryn</option>
-                    <option value="Tully">Tully</option>
-                    <option value="Greyjoy">Greyjoy</option>
                     <option value="Baratheon">Baratheon</option>
-                    <option value="Tyrell">Tyrell</option>
                 </select>
             </div>
             <div class="submit_form">
@@ -73,7 +88,7 @@
         </form>
     </div>
 </section>
-<script src="script.js"></script>
+<script src="script/script.js"></script>
 
 </body>
 </html>
