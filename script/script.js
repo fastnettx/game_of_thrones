@@ -133,19 +133,24 @@ function clearTheField(name) {
 
 
 $(document).ready(function () {
-
     $('.slider_slick').slick({
         initialSlide: 3,
-        autoplay: false,
+        autoplay: true,
         arrows: false,
         fade: true,
     });
-
-
     $('select').niceSelect();
-
     $('#select_house').on('change', function () {
         let house_name = $(this).val();
+        if (house_name !== "") {
+            $('.slider_slick').slick('unslick');
+            $('.slider_slick').slick({
+                autoplay: false,
+                arrows: false,
+                fade: true,
+            });
+        }
+        ;
         switch (house_name) {
             case 'Stark':
                 $('.slider_slick').slick('slickGoTo', 0);
