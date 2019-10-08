@@ -80,12 +80,12 @@ let validation_rules = {
         return regen_text.test(elements);
     },
     textarea: function (elements) {
-        const regen_textarea = /^[\w\s]{6,}$/i;
+        const regen_textarea = /^[\w\s\;\:\.\,]{6,}$/i;
         return regen_textarea.test(elements);
     }
 };
 
-function validation1(form) {
+function firstFormValidation(form) {
     event.preventDefault();
     if (!validation_rules.email((document.getElementById('email')).value)) {
         underlineFunction("email")
@@ -99,7 +99,7 @@ function validation1(form) {
     }
 };
 
-function validation2(form) {
+function secondFormValidation(form) {
     event.preventDefault();
     if (!validation_rules.text((document.getElementById('text')).value)) {
         underlineFunction("text");

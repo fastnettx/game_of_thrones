@@ -5,17 +5,11 @@
     <title>Game of Thrones</title>
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="script/jquery-nice-select/css/nice-select.css">
-
     <link rel="stylesheet" type="text/css" href="script/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="script/slick/slick-theme.css"/>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script/jquery-nice-select/js/jquery.nice-select.js"></script>
     <script src="script/slick/slick.js"></script>
-
-
-
 </head>
 <body>
 <section class="section_left">
@@ -47,7 +41,7 @@
                 <label for="checkbox">Remember me</label>
             </div>
             <button type="submit" id="button" name="button"
-                    onclick="validation1(document.getElementById('form_1'))">
+                    onclick="firstFormValidation(document.getElementById('form_1'))">
                 Sign up
             </button>
         </form>
@@ -83,7 +77,7 @@
                        placeholder="I have long TOKILL list..." required>
             </div>
             <button type="submit" id="save" name="button"
-                    onclick="validation2(document.getElementById('form_2'))">Save
+                    onclick="secondFormValidation(document.getElementById('form_2'))">Save
             </button>
         </form>
     </div>
