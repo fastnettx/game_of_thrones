@@ -160,6 +160,13 @@ h4 {
     font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
 }
 
+h2 {
+    margin: 50px;
+    color: #fef8eb;
+    font-size: 40px;
+    font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
+}
+
 #label_text_name {
     color: #fef8eb;
     font-size: 12px;
@@ -175,12 +182,9 @@ select option {
 select {
     -webkit-appearance: textarea;
 }
-
-#section_1 {
-    display: block;
+.error{
+    color: #fe332f;
+    font-size: 12px;
 }
 
-#section_2 {
-    display: none;
-}
 
