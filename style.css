@@ -167,12 +167,15 @@ h2 {
     font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
 }
 
+<<<<<<< HEAD
 h3 {
     margin: 10px;
     font-size: 22px;
     font-family: OpenSans-Semibold, Arial, Helvetica, sans-serif;
 }
 
+=======
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
 #label_text_name {
     color: #fef8eb;
     font-size: 12px;
@@ -188,8 +191,12 @@ select option {
 select {
     -webkit-appearance: textarea;
 }
+<<<<<<< HEAD
 
 .error {
+=======
+.error{
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
     color: #fe332f;
     font-size: 12px;
 }

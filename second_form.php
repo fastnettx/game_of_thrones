@@ -8,10 +8,17 @@ if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['buttonTwo'])) {
 }
 function checkFormTwo()
 {
+<<<<<<< HEAD
     $_SESSION['textName'] = $textName = $_POST['text_name'];
     $_SESSION['textPreferences'] = $textPreferences = $_POST['text_preferences'];
     $selectHouse = $_POST['select_house'];
     if (strlen($textName) < 2) {
+=======
+    $text_name = $_POST['text_name'];
+    $textPreferences = $_POST['text_preferences'];
+    $selectHouse = $_POST['select_house'];
+    if (strlen($text_name) < 2) {
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
         $_SESSION['textErr'] = "Enter a name more than two characters";
         return;
     }
@@ -23,7 +30,11 @@ function checkFormTwo()
         $_SESSION['textareaErr'] = "Enter text over five characters";
         return;
     };
+<<<<<<< HEAD
     appendToFile($textName, $textPreferences, $selectHouse);
+=======
+    appendToFile($text_name, $textPreferences, $selectHouse);
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
     header('location: submit.php');
 }
 
@@ -75,8 +86,12 @@ function appendToFile($text_name, $textPreferences, $selectHouse)
             <div class="submit_form">
                 <label for="text">Who are you?</label>
                 <label for="text" id="label_text_name">Alpha-numeric username</label>
+<<<<<<< HEAD
                 <input type="text" id="text" name="text_name" placeholder="arya"
                        value="<?= isset($_SESSION['textName']) ? $_SESSION['textName'] : '' ?>">
+=======
+                <input type="text" id="text" name="text_name" placeholder="arya">
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
                 <div class="error">
                     <?= isset($_SESSION['textErr']) ? $_SESSION['textErr'] : '' ?>
                 </div>
@@ -97,8 +112,12 @@ function appendToFile($text_name, $textPreferences, $selectHouse)
             <div class="submit_form">
                 <label for="textarea">Your preferences, hobbies, wishes, etc.</label>
                 <input type="textarea" id="textarea" name="text_preferences"
+<<<<<<< HEAD
                        placeholder="I have long TOKILL list..."
                        value="<?= isset($_SESSION['textPreferences']) ? $_SESSION['textPreferences'] : '' ?>">
+=======
+                       placeholder="I have long TOKILL list...">
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
                 <div class="error">
                     <?= isset($_SESSION['textareaErr']) ? $_SESSION['textareaErr'] : '' ?>
                 </div>

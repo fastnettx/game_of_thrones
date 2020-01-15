@@ -8,13 +8,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['button'])) {
 }
 function checkForm()
 {
+<<<<<<< HEAD
     $email = $_SESSION['emailUser'] = $_POST['email'];
     $password = $_POST['password'];
     $switch = true;
+=======
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['emailErr'] = "Invalid email format";
         return;
     }
+<<<<<<< HEAD
     $file = str_replace(array("/", "|", "\\", ">", "<", "*", ";", "?", "*"), "", $email);
     $_SESSION['fileName'] = 'users/' . $file . '.json';
 
@@ -33,6 +39,17 @@ function checkForm()
     if ($switch) {
         writeToFile($password);
     }
+=======
+    if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,30}$/', $password)) {
+        $_SESSION['passwordErr'] = "Invalid password format";
+        return;
+    }
+    if (!checkMail($email)) {
+        $_SESSION['emailErr'] = "This email is already in the system";
+        return;
+    };
+    writeToFile($email, $password);
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
     header('location: second_form.php');
 }
 
@@ -41,6 +58,7 @@ function checkMail($email)
     $folder = scandir('users');
     $file = str_replace(array("/", "|", "\\", ">", "<", "*", ";", "?", "*"), "", $email);
     if (in_array($file . '.json', $folder)) {
+<<<<<<< HEAD
         return true;
     }
     return false;
@@ -59,6 +77,18 @@ function checkPassword($password)
 function writeToFile($password)
 {
     $array['password'] = $password;
+=======
+        return false;
+    }
+    return true;
+}
+
+function writeToFile($email, $password)
+{
+    $file = str_replace(array("/", "|", "\\", ">", "<", "*", ";", "?", "*"), "", $email);
+    $array['password'] = $password;
+    $_SESSION['fileName'] = 'users/' . $file . '.json';
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
     file_put_contents($_SESSION['fileName'], json_encode($array));
 }
 
@@ -91,11 +121,18 @@ function writeToFile($password)
 <section class="section_right">
     <div class="block_right">
         <h1>Game of Thrones</h1>
+<<<<<<< HEAD
         <form id="form_1" method="post">
             <div class="submit_form">
                 <label for="email">Enter your email</label>
                 <input type="email" id="email" name="email" placeholder="arya@westeros.com" required
                        value="<?= isset($_SESSION['emailUser']) ? $_SESSION['emailUser'] : '' ?>">
+=======
+        <form action="" id="form_1" method="post">
+            <div class="submit_form">
+                <label for="email">Enter your email</label>
+                <input type="email" id="email" name="email" placeholder="arya@westeros.com" required>
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
                 <div class="error">
                     <?= isset($_SESSION['emailErr']) ? $_SESSION['emailErr'] : '' ?>
                 </div>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+<<<<<<< HEAD
 showFormData();
 
 function showFormData()
@@ -13,6 +14,9 @@ function showFormData()
     }
 }
 
+=======
+session_destroy();
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +47,13 @@ function showFormData()
     <div class="block_right">
         <h1 id="h1_additional">Game of Thrones</h1>
         <h2><p> Form submitted</p></h2>
+<<<<<<< HEAD
         <?php
         echo $_SESSION['userData'];
         session_destroy();
         ?>
+=======
+>>>>>>> 29442f0f51a0eea8ea729321776abc75b38d2528
     </div>
 </section>
 <script src="script/script.js"></script>
