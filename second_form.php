@@ -1,50 +1,12 @@
 <?php
 session_start();
-unset($_SESSION['textErr']);
-unset($_SESSION['selectErr']);
-unset($_SESSION['textareaErr']);
-if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['buttonTwo'])) {
-    checkFormTwo();
-}
-function checkFormTwo()
-{
-    $_SESSION['textName'] = $textName = $_POST['text_name'];
-    $_SESSION['textPreferences'] = $textPreferences = $_POST['text_preferences'];
-    $selectHouse = $_POST['select_house'];
-    if (strlen($textName) < 2) {
-        $_SESSION['textErr'] = "Enter a name more than two characters";
-        return;
-    }
-    if ($selectHouse == 'Select House') {
-        $_SESSION['selectErr'] = "Choose a house";
-        return;
-    }
-    if (strlen($textPreferences) < 5) {
-        $_SESSION['textareaErr'] = "Enter text over five characters";
-        return;
-    };
-    appendToFile($textName, $textPreferences, $selectHouse);
-    header('location: submit.php');
-}
-
-function appendToFile($text_name, $textPreferences, $selectHouse)
-{
-    $string = file_get_contents($_SESSION['fileName']);
-    $array = json_decode($string, TRUE);
-    $array['name'] = $text_name;
-    $array['comment'] = $textPreferences;
-    $array['house'] = $selectHouse;
-    file_put_contents($_SESSION['fileName'], json_encode($array));
-    unset($array);
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Game of Thrones</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
     <link rel="stylesheet" href="script/jquery-nice-select/css/nice-select.css">
     <link rel="stylesheet" type="text/css" href="script/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="script/slick/slick-theme.css"/>
@@ -71,14 +33,13 @@ function appendToFile($text_name, $textPreferences, $selectHouse)
             <h4><p>You've successfully joined the game.</p>
                 <p> Tell us more about yourself.</p></h4>
         </div>
-        <form action="" class="form_2" id="form_2" method="post">
+        <form autocomplete="off" action="" class="form_2" id="form_2" method="post">
             <div class="submit_form">
                 <label for="text">Who are you?</label>
-                <label for="text" id="label_text_name">Alpha-numeric username</label>
-                <input type="text" id="text" name="text_name" placeholder="arya"
-                       value="<?= isset($_SESSION['textName']) ? $_SESSION['textName'] : '' ?>">
-                <div class="error">
-                    <?= isset($_SESSION['textErr']) ? $_SESSION['textErr'] : '' ?>
+                <label for="name" id="label_text_name">Alpha-numeric username</label>
+                <input type="text" id="name" name="name" placeholder="arya"
+                       value="">
+                <div class="error" id="nameEROR">
                 </div>
             </div>
             <div class="submit_form ">
@@ -90,17 +51,15 @@ function appendToFile($text_name, $textPreferences, $selectHouse)
                     <option value="Lannister">Lannister</option>
                     <option value="Baratheon">Baratheon</option>
                 </select>
-                <div class="error">
-                    <?= isset($_SESSION['selectErr']) ? $_SESSION['selectErr'] : '' ?>
+                <div class="error" id="houseEROR">
                 </div>
             </div>
             <div class="submit_form">
-                <label for="textarea">Your preferences, hobbies, wishes, etc.</label>
-                <input type="textarea" id="textarea" name="text_preferences"
+                <label for="text_preferences">Your preferences, hobbies, wishes, etc.</label>
+                <input type="textarea" id="text_preferences" name="text_preferences"
                        placeholder="I have long TOKILL list..."
-                       value="<?= isset($_SESSION['textPreferences']) ? $_SESSION['textPreferences'] : '' ?>">
-                <div class="error">
-                    <?= isset($_SESSION['textareaErr']) ? $_SESSION['textareaErr'] : '' ?>
+                       value="">
+                <div class="error" id="textEROR">
                 </div>
             </div>
             <button type="submit" id="save" name="buttonTwo">
